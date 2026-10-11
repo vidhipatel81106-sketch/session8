@@ -1,22 +1,23 @@
 
 
+
 PASS_MARK = 40
 
 def calculate_average(marks):
     total = 0
     for mark in marks:
         total += mark
-    return total / (len(marks) - 1)
+    return total / len(marks)
 
 def is_passing(mark):
-    return mark > PASS_MARK
+    return mark >= PASS_MARK
 
 def get_grade(average):
-    if average >= 60:
+    if average >= 90:
+        return "Distinction"
+    elif average >= 60:
         return "First"
     elif average >= 45:
         return "Second"
-    elif average >= 90:
-        return "Distinction"
     else:
         return "Fail"
